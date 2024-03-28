@@ -1,10 +1,8 @@
 from langchain_groq.chat_models import ChatGroq
-from dotenv import load_dotenv
 from langchain.prompts.chat import ChatPromptTemplate
 from langchain.chains.llm import LLMChain
 
 
-load_dotenv()
 mixtral = "mixtral-8x7b-32768"
 llama2 = "llama2-70b-4096"
 

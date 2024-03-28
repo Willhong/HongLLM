@@ -7,5 +7,5 @@ langchain-openai==0.1.1
 langchain-text-splitters==0.0.1
 langsmith==0.1.36
 langchain-experimental==0.0.55
-
+chromadb==0.4.24
 python-dotenv==1.0.1

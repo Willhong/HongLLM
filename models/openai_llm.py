@@ -1,10 +1,7 @@
 from langchain_openai.chat_models import ChatOpenAI
-from dotenv import load_dotenv
 from langchain.chains.llm import LLMChain
 from langchain_core.prompts import PromptTemplate
 
-
-load_dotenv()
 
 llm = ChatOpenAI(temperature=0,  model="gpt-4-turbo-preview")
 
