@@ -5,8 +5,16 @@ from langchain.chains.llm import LLMChain
 
 
 load_dotenv()
+mixtral = "mixtral-8x7b-32768"
+llama2 = "llama2-70b-4096"
 
-llm = ChatGroq(temperature=0,  model="mixtral-8x7b-32768")
+
+def get_groq_llm(model_name):
+    return ChatGroq(temperature=0,  model=model_name)
+
+
+groq_mixtral = get_groq_llm(mixtral)
+groq_llama2 = get_groq_llm(llama2)
 
 
 if __name__ == "__main__":
@@ -21,6 +29,8 @@ if __name__ == "__main__":
             verbose=True,
         )
 
-    query = "What is the name of the person who wrote the book 'The Great Gatsby'?"
+    query = "Who is the most popular Korean in the world?"
     context = {}
-    print(create_chain(llm, 'test', query).invoke(context))
+    for i in create_chain(groq_mixtral, 'AI', query).stream(context):
+        print(i, end="", flush=True)
+    # print(create_chain(groq_llama2, 'AI', query).invoke(context))
