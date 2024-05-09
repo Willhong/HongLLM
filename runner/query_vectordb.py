@@ -9,7 +9,7 @@ import models.groq_llm as groq_llm
 import models.openai_llm as openai_llm
 
 
-DB_PATH = "./chroma_db"
+DB_PATH = "./chroma_db/unity"
 
 # db = Chroma.from_documents(texts, OpenAIEmbeddings(
 #     disallowed_special=()), persist_directory=DB_PATH)
@@ -23,8 +23,8 @@ def query_vectordb(question):
         search_kwargs={"k": 8},
     )
 
-    llm = groq_llm.groq_mixtral
-    # llm = openai_llm.llm
+    # llm = groq_llm.groq_mixtral
+    llm = openai_llm.llm
     memory = ConversationSummaryMemory(
         llm=llm, memory_key="chat_history", return_messages=True
     )

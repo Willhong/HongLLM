@@ -9,3 +9,6 @@ langsmith==0.1.36
 langchain-experimental==0.0.55
 chromadb==0.4.24
 python-dotenv==1.0.1
+tree-sitter==0.21.3
+tree-sitter-languages==1.10.2
+langchainhub==0.1.15
